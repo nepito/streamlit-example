@@ -7,12 +7,16 @@ import streamlit as st
 """
 # Greetings to the **chingón** del David from Streamlit!
 
-Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:
+with tab1:
+    st.subheader("| Intro")
+    col1, col2 = st.columns(2, gap="small")
+    with col1:
+        # main_image
+        st.image("https://github.com/nepito/world_cup_semis/blob/develop/img/logo.jpeg")
 
-If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
-forums](https://discuss.streamlit.io).
-
-In the meantime, below is an example of what you can do with just a few lines of code:
+        st.caption(
+            "The Dungeon: a streamlit dungeon crawler game", unsafe_allow_html=True
+        )
 """
 
 
