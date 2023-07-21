@@ -7,9 +7,11 @@ import streamlit as st
 """
 # Greetings to the **chingón** del David from Streamlit!
 
+
+"""
 with tab1:
     st.subheader("| Intro")
-    col1, col2 = st.columns(2, gap="small")
+    col1 = st.columns(1, gap="small")
     with col1:
         # main_image
         st.image("https://github.com/nepito/world_cup_semis/blob/develop/img/logo.jpeg")
@@ -17,8 +19,6 @@ with tab1:
         st.caption(
             "The Dungeon: a streamlit dungeon crawler game", unsafe_allow_html=True
         )
-"""
-
 
 with st.echo(code_location='below'):
     total_points = st.slider("Number of points in spiral", 1, 5432, 2000)
