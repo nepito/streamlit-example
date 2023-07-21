@@ -14,7 +14,7 @@ with tab1:
     col1 = st.columns(1, gap="small")
     with col1:
         # main_image
-        st.image("https://github.com/nepito/world_cup_semis/blob/develop/img/logo.jpeg")
+        st.image("img/logo.jpeg")
 
         st.caption(
             "The Dungeon: a streamlit dungeon crawler game", unsafe_allow_html=True
