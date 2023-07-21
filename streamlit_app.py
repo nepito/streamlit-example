@@ -5,7 +5,7 @@ import pandas as pd
 import streamlit as st
 
 """
-# Greetings to the *chingon* del David from Streamlit!
+# Greetings to the **chingón** del David from Streamlit!
 
 Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:
 
