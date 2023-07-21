@@ -7,18 +7,8 @@ import streamlit as st
 """
 # Greetings to the **chingón** del David from Streamlit!
 
-
+![](img/logo.jpeg)
 """
-with tab1:
-    st.subheader("| Intro")
-    col1 = st.columns(1, gap="small")
-    with col1:
-        # main_image
-        st.image("img/logo.jpeg")
-
-        st.caption(
-            "The Dungeon: a streamlit dungeon crawler game", unsafe_allow_html=True
-        )
 
 with st.echo(code_location='below'):
     total_points = st.slider("Number of points in spiral", 1, 5432, 2000)
