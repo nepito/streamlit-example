@@ -20,7 +20,5 @@ player = st.selectbox(
     'Jugador', ['R. Alvarado', 'H. Martín'],
     )
 
-player = st.text_input('Type an animal')
-
 if st.button('Check availability'):
     st.image(f"static/{player}.jpg")
