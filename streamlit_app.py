@@ -11,10 +11,11 @@ import streamlit as st
 """
 
 st.title('Uber pickups in NYC')
-st.markdown(
-    '<img src="./app/static/logo.jpeg" height="333" style="border: 5px solid orange">',
-    unsafe_allow_html=True,
-)
+with st.echo():
+    st.markdown(
+        '<img src="./app/static/logo.jpeg" height="333" style="border: 5px solid orange">',
+        unsafe_allow_html=True,
+        )
 
 with st.echo(code_location='below'):
     total_points = st.slider("Number of points in spiral", 1, 5432, 2000)
