@@ -5,7 +5,7 @@ import pandas as pd
 import streamlit as st
 
 """
-# Plataforma Interactiva para Transferencias Optimas
+# Plataforma Interactiva para Transferencias Óptimas
 
 ![](./app/static/logo.jpeg)
 """
