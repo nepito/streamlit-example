@@ -10,11 +10,10 @@ import streamlit as st
 ![](./app/static/logo.jpeg)
 """
 
-with st.echo():
-    st.markdown(
-        '<img src="./app/static/logo.jpeg" height="333" style="border: 5px solid orange">',
-        unsafe_allow_html=True,
-        )
+st.set_page_config(
+    page_title="The Dungeon", page_icon="🗡️", initial_sidebar_state="collapsed"
+)
+
 
 
 # ----------------- game start --------
