@@ -5,7 +5,7 @@ import pandas as pd
 import streamlit as st
 
 """
-# Greetings to the **chingón** del David from Streamlit!
+# Plataforma Interactiva para Transferencias Optimas
 
 ![](./app/static/logo.jpeg)
 """
