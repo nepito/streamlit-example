@@ -17,6 +17,21 @@ with st.echo():
         )
 
 
+tab1, tab2 = st.tabs(["intro", "start game"])
+
+# ----------------- game start --------
+
+with tab1:
+    st.subheader("| Intro")
+    col1= st.columns(1, gap="small")
+    with col1:
+        # main_image
+        st.image("static/R. Alvarado.jpg")
+
+        st.caption(
+            "The Dungeon: a streamlit dungeon crawler game", unsafe_allow_html=True
+        )
+
 total_points = st.slider("Number of points in spiral", 1, 5432, 2000)
 num_turns = st.slider("Number of turns in spiral", 1, 100, 9)
 
