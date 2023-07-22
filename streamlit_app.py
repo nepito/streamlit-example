@@ -16,12 +16,10 @@ import streamlit as st
 st.subheader("| Intro")
 st.image("static/R. Alvarado.jpg")
 
-if st.session_state.stage >= 2:
-    st.write(f'Hello {name}!')
-    color = st.selectbox(
-        'Pick a Color',
-        [None, 'red', 'orange', 'green', 'blue', 'violet'],
-        on_change=set_state, args=[3]
-    )
-    if color is None:
-        set_state(2)
+animal_shelter = ['cat', 'dog', 'rabbit', 'bird']
+
+animal = st.text_input('Type an animal')
+
+if st.button('Check availability'):
+    have_it = animal.lower() in animal_shelter
+    'We have that animal!' if have_it else 'We don\'t have that animal.'
