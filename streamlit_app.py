@@ -13,8 +13,7 @@ import streamlit as st
 
 # ----------------- game start --------
 
-st.subheader("| Intro")
-st.image("static/R. Alvarado.jpg")
+st.subheader("Selecciona un jugador")
 
 player = st.selectbox(
     'Jugador', ['R. Alvarado', 'H. Martín'],
