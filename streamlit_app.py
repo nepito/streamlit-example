@@ -11,7 +11,10 @@ import streamlit as st
 """
 
 st.title('Uber pickups in NYC')
-st.markdown("[![Click me]('https://github.com/nepito/world_cup_semis/blob/develop/img/logo.jpeg')](https://streamlit.io)")
+st.markdown(
+    '<img src="https://github.com/nepito/world_cup_semis/blob/develop/img/logo.jpeg" height="333" style="border: 5px solid orange">',
+    unsafe_allow_html=True,
+)
 
 with st.echo(code_location='below'):
     total_points = st.slider("Number of points in spiral", 1, 5432, 2000)
