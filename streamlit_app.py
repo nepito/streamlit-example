@@ -7,7 +7,7 @@ import streamlit as st
 """
 # Greetings to the **chingón** del David from Streamlit!
 
-![](img/logo.jpeg)
+![](./app/static/logo.jpeg)
 """
 
 st.title('Uber pickups in NYC')
