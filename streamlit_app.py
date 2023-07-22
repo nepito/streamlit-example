@@ -12,7 +12,7 @@ import streamlit as st
 
 st.title('Uber pickups in NYC')
 st.markdown(
-    '<img src="https://github.com/nepito/world_cup_semis/blob/develop/img/logo.jpeg" height="333" style="border: 5px solid orange">',
+    '<img src="./img/logo.jpeg" height="333" style="border: 5px solid orange">',
     unsafe_allow_html=True,
 )
 
