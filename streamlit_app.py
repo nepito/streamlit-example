@@ -12,7 +12,7 @@ import streamlit as st
 
 st.title('Uber pickups in NYC')
 st.markdown(
-    '<img src="./img/logo.jpeg" height="333" style="border: 5px solid orange">',
+    '<img src="./app/static/logo.jpeg" height="333" style="border: 5px solid orange">',
     unsafe_allow_html=True,
 )
 
