@@ -16,9 +16,11 @@ import streamlit as st
 st.subheader("| Intro")
 st.image("static/R. Alvarado.jpg")
 
-animal_shelter = ['cat', 'dog', 'rabbit', 'bird']
+player = st.selectbox(
+    'Jugador', ['R. Alvarado', 'H. Martín'],
+    )
 
 player = st.text_input('Type an animal')
 
 if st.button('Check availability'):
-    st.image(f"static/{player}")
+    st.image(f"static/{player}.jpg")
