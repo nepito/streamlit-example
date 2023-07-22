@@ -10,11 +10,6 @@ import streamlit as st
 ![](./app/static/logo.jpeg)
 """
 
-st.set_page_config(
-    page_title="The Dungeon", page_icon="🗡️", initial_sidebar_state="collapsed"
-)
-
-
 
 # ----------------- game start --------
 
