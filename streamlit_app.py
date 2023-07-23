@@ -40,3 +40,5 @@ st.altair_chart(
         ],
     ).configure_view(step=13, strokeWidth=0).configure_axis(domain=False)
 )
+
+st.dataframe(source)
