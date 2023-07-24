@@ -42,3 +42,5 @@ st.altair_chart(
 )
 
 st.dataframe(source)
+
+st.markdown("Made with 💖 by [nies.futbol](https://nies.futbol)")
