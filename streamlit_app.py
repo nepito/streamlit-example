@@ -5,7 +5,8 @@ import pandas as pd
 import streamlit as st
 from vega_datasets import data
 
-source = data.seattle_weather()
+players = pd.read_csv("static/mineros_players.csv")
+
 
 """
 # Plataforma Interactiva para Transferencias Óptimas
@@ -23,24 +24,10 @@ La descripción completa la encontrarás en al entrada [Gráfica de desempeño d
 st.subheader("Selecciona un jugador")
 
 player = st.selectbox(
-    'Jugador', ['R. Alvarado', 'H. Martín'],
+    'Jugador', players["Player"].to_list(),
     )
 
 if st.button('Muestra la gráfica de desempeño'):
     st.image(f"static/{player}.jpg")
-
-st.altair_chart(
-    alt.Chart(source, title="Daily Max Temperatures (C) in Seattle, WA").mark_rect().encode(
-        x=alt.X("date(date):O", title="Day", axis=alt.Axis(format="%e", labelAngle=0)),
-        y=alt.Y("month(date):O", title="Month"),
-        color=alt.Color("max(temp_max)", legend=alt.Legend(title=None)),
-        tooltip=[
-            alt.Tooltip("monthdate(date)", title="Date"),
-            alt.Tooltip("max(temp_max)", title="Max Temp"),
-        ],
-    ).configure_view(step=13, strokeWidth=0).configure_axis(domain=False)
-)
-
-st.dataframe(source)
 
 st.markdown("Made with 💖 by [nies.futbol](https://nies.futbol)")
