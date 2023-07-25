@@ -9,7 +9,7 @@ players = pd.read_csv("static/mineros_players.csv")
 
 
 """
-# Plataforma Interactiva para Transferencias Óptimas
+# Gráficas de desempeño
 
 Estas gráficas tienen un conjunto de métricas seleccionadas a partir de técnicas de inteligencia artificial.
 Cada barra representa la fuerza relativa del jugador en cada una de las métricas.
