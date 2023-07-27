@@ -5,7 +5,7 @@ import pandas as pd
 import streamlit as st
 from vega_datasets import data
 
-players = pd.read_csv("static/mineros_players.csv")
+players = pd.read_csv("static/players_streamlit.csv")
 
 
 """
