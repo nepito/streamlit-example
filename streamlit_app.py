@@ -20,14 +20,33 @@ La descripción completa la encontrarás en al entrada [Gráfica de desempeño d
 
 
 # ----------------- game start --------
+tab1, tab2 = st.tabs(["Jugadores", "Equipos"])
 
-st.subheader("Selecciona un jugador")
+with tab1:
+    st.subheader("Selecciona un jugador")
+    player = st.selectbox('Jugador', players["Player"].to_list(),)
+    if st.button('Muestra la gráfica de desempeño'):
+        st.image(f"static/{player}.jpg")
 
-player = st.selectbox(
-    'Jugador', players["Player"].to_list(),
+with tab2:
+    data = pd.read_csv('static/consistent_team.csv')
+
+# Crear el gráfico de Altair
+    chart = alt.Chart(data, title="Minutes Played by Player and Match").mark_rect().encode(
+        alt.X("match:O").title("Match"),
+        alt.Y("player:O", sort=alt.EncodingSortField(field="minutes", op="sum", order="descending")).title("Player"),
+        alt.Color("minutes:Q", scale=alt.Scale(scheme='blues')).title("Minutes"),
+        tooltip=[
+            alt.Tooltip("match:O", title="Match"),
+            alt.Tooltip("player:O", title="Player"),
+            alt.Tooltip("minutes:Q", title="Minutes"),
+        ],
+    ).configure_view(
+        step=13,
+        strokeWidth=0
+    ).configure_axis(
+        domain=False
     )
-
-if st.button('Muestra la gráfica de desempeño'):
-    st.image(f"static/{player}.jpg")
+    st.altair_chart(chart)
 
 st.markdown("Made with 💖 by [nies.futbol](https://nies.futbol)")
