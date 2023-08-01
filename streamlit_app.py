@@ -34,7 +34,7 @@ with tab2:
 
 # Crear el gráfico de Altair
     chart = alt.Chart(played_minutes, title="Minutes Played by Player and Match").mark_rect().encode(
-        alt.X("match:N", sort=alt.EncodingSortField(field="date", order="ascending")).title("Match"),
+        alt.X("match:N", sort=alt.EncodingSortField(field="date", order="ascending"), values = "").title("Match"),
         alt.Y("player:N", sort=alt.EncodingSortField(field="minutes", op="sum", order="descending"), title = "Player"),
         alt.Color("minutes:Q", scale=alt.Scale(scheme='blues')).title("Minutes"),
         tooltip=[
