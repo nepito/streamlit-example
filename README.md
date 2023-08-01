@@ -2,6 +2,6 @@
 src="https://github.com/nepito/world_cup_semis/blob/develop/img/logo.jpeg" align="right" width="256"
 /></a>
 
-# App onsistent lineup setup
+# App consistent lineup setup
 
 ## Step to use
