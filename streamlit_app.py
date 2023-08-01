@@ -29,10 +29,11 @@ with tab1:
         st.image(f"static/{player}.jpg")
 
 with tab2:
-    data = pd.read_csv('static/consistent_team.csv')
+    data = pd.read_csv('static/played_minutes.csv')
+    played_minutes = data[data.team == "Mineros de Zacatecas"]
 
 # Crear el gráfico de Altair
-    chart = alt.Chart(data, title="Minutes Played by Player and Match").mark_rect().encode(
+    chart = alt.Chart(played_minutes, title="Minutes Played by Player and Match").mark_rect().encode(
         alt.X("match:O").title("Match"),
         alt.Y("player:O", sort=alt.EncodingSortField(field="minutes", op="sum", order="descending")).title("Player"),
         alt.Color("minutes:Q", scale=alt.Scale(scheme='blues')).title("Minutes"),
