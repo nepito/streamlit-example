@@ -29,7 +29,7 @@ with tab1:
         st.image(f"static/{player}.jpg")
 
 with tab2:
-    team = "Mineros de Zacatecas"
+    team = "Cancún"
     data = pd.read_csv('static/played_minutes.csv')
     played_minutes = data[data.team == team]
 
@@ -37,7 +37,7 @@ with tab2:
     chart = alt.Chart(played_minutes, title=f"Minutes Played by Player and Match: \n {team}").mark_rect().encode(
         alt.X("match:N", sort=alt.EncodingSortField(field="date", order="ascending")).title("Match"),
         alt.Y("player:N", sort=alt.EncodingSortField(field="minutes", op="sum", order="descending"), title = "Player"),
-        alt.Color("minutes:Q", scale=alt.Scale(scheme='reds')).title("Minutes"),
+        alt.Color("minutes:Q", scale=alt.Scale(scheme='blues')).title("Minutes"),
         tooltip=[
             alt.Tooltip("match:N", title="Match"),
             alt.Tooltip("player:N", title="Player"),
