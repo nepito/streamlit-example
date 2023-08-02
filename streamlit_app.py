@@ -20,24 +20,26 @@ La descripción completa la encontrarás en al entrada [Gráfica de desempeño d
 
 
 # ----------------- game start --------
+data = pd.read_csv('static/played_minutes.csv')
 tab1, tab2 = st.tabs(["Jugadores", "Equipos"])
 
 with tab1:
     st.subheader("Selecciona un jugador")
     player = st.selectbox('Jugador', players["Player"].to_list(),)
-    if st.button('Muestra la gráfica de desempeño'):
-        st.image(f"static/{player}.jpg")
+    st.image(f"static/{player}.jpg")
 
 with tab2:
-    team = "Cimarrones"
-    data = pd.read_csv('static/played_minutes.csv')
+    teams = ["Cimarrones", "Cancún", "Mineros de Zacatecas"]
+    colours = {"Cimarrones": "oranges", "Cancún": "blues", "Mineros de Zacatecas": "reds"}
+    team = st.selectbox('Equipos', teams)
+    color = colours[team]
     played_minutes = data[data.team == team]
 
 # Crear el gráfico de Altair
     chart = alt.Chart(played_minutes, title=f"Minutes Played by Player and Match: \n{team}").mark_rect().encode(
         alt.X("match:N", sort=alt.EncodingSortField(field="date", order="ascending")).title("Match"),
         alt.Y("player:N", sort=alt.EncodingSortField(field="minutes", op="sum", order="descending"), title = "Player"),
-        alt.Color("minutes:Q", scale=alt.Scale(scheme='oranges')).title("Minutes"),
+        alt.Color("minutes:Q", scale=alt.Scale(scheme=color)).title("Minutes"),
         tooltip=[
             alt.Tooltip("match:N", title="Match"),
             alt.Tooltip("player:N", title="Player"),
