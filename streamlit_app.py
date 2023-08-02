@@ -15,7 +15,7 @@ Estas gráficas tienen un conjunto de métricas seleccionadas a partir de técni
 Cada barra representa la fuerza relativa del jugador en cada una de las métricas.
 La distancia que existe de la barra al centro indica el percentil comparado con la base de datos completa.
 
-La descripción completa la encontrarás en al entrada [Gráfica de desempeño de jugadores](https://www.nies.futbol/2023/07/grafica-de-desempeno-de-jugadores.html).
+La descripción completa la encontrarás en la entrada [Gráfica de desempeño de jugadores](https://www.nies.futbol/2023/07/grafica-de-desempeno-de-jugadores.html).
 """
 
 
@@ -29,6 +29,14 @@ with tab1:
     st.image(f"static/{player}.jpg")
 
 with tab2:
+    """
+    En la figura de abajo mostramos un mapa de calor.
+    En los renglones podemos ver a los jugadores del equipo (incluyendo a los sustitutos).
+    Las columnas corresponden a los partidos disputados.
+    Así, el color de cada cuadro representa los minutos disputados en un partido por cada jugador.
+
+    La descripción completa la encontrarás en la entrada [Consistencia en las alineaciones](https://www.nies.futbol/2023/08/consistencia-en-las-alineaciones-la.html).
+    """
     teams = ["Cimarrones", "Cancún", "Mineros de Zacatecas"]
     colours = {"Cimarrones": "oranges", "Cancún": "blues", "Mineros de Zacatecas": "reds"}
     team = st.selectbox('Equipos', teams)
