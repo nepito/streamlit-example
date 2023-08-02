@@ -8,15 +8,7 @@ from vega_datasets import data
 players = pd.read_csv("static/players_streamlit.csv")
 
 
-"""
-# Gráficas de desempeño
 
-Estas gráficas tienen un conjunto de métricas seleccionadas a partir de técnicas de inteligencia artificial.
-Cada barra representa la fuerza relativa del jugador en cada una de las métricas.
-La distancia que existe de la barra al centro indica el percentil comparado con la base de datos completa.
-
-La descripción completa la encontrarás en la entrada [Gráfica de desempeño de jugadores](https://www.nies.futbol/2023/07/grafica-de-desempeno-de-jugadores.html).
-"""
 
 
 # ----------------- game start --------
@@ -24,11 +16,19 @@ data = pd.read_csv('static/played_minutes.csv')
 tab1, tab2 = st.tabs(["Jugadores", "Equipos"])
 
 with tab1:
-    st.subheader("Selecciona un jugador")
-    player = st.selectbox('Jugador', players["Player"].to_list(),)
+    """
+Estas gráficas tienen un conjunto de métricas seleccionadas a partir de técnicas de inteligencia artificial.
+Cada barra representa la fuerza relativa del jugador en cada una de las métricas.
+La distancia que existe de la barra al centro indica el percentil comparado con la base de datos completa.
+
+La descripción completa la encontrarás en la entrada [Gráfica de desempeño de jugadores](https://www.nies.futbol/2023/07/grafica-de-desempeno-de-jugadores.html).
+"""
+    st.subheader("Gráficas de desempeño")
+    player = st.selectbox('Selecciona un jugador', players["Player"].to_list(),)
     st.image(f"static/{player}.jpg")
 
 with tab2:
+    st.subheader("Gráficas de consistencia")
     """
     En la figura de abajo mostramos un mapa de calor.
     En los renglones podemos ver a los jugadores del equipo (incluyendo a los sustitutos).
@@ -39,7 +39,7 @@ with tab2:
     """
     teams = ["Cimarrones", "Cancún", "Mineros de Zacatecas"]
     colours = {"Cimarrones": "oranges", "Cancún": "blues", "Mineros de Zacatecas": "reds"}
-    team = st.selectbox('Equipos', teams)
+    team = st.selectbox('Selecciona un equipo:', teams)
     color = colours[team]
     played_minutes = data[data.team == team]
 
