@@ -16,14 +16,14 @@ data = pd.read_csv('static/played_minutes.csv')
 tab1, tab2 = st.tabs(["Jugadores", "Equipos"])
 
 with tab1:
-    """
-Estas gráficas tienen un conjunto de métricas seleccionadas a partir de técnicas de inteligencia artificial.
-Cada barra representa la fuerza relativa del jugador en cada una de las métricas.
-La distancia que existe de la barra al centro indica el percentil comparado con la base de datos completa.
-
-La descripción completa la encontrarás en la entrada [Gráfica de desempeño de jugadores](https://www.nies.futbol/2023/07/grafica-de-desempeno-de-jugadores.html).
-"""
     st.subheader("Gráficas de desempeño")
+    """
+    Estas gráficas tienen un conjunto de métricas seleccionadas a partir de técnicas de inteligencia artificial.
+    Cada barra representa la fuerza relativa del jugador en cada una de las métricas.
+    La distancia que existe de la barra al centro indica el percentil comparado con la base de datos completa.
+
+    La descripción completa la encontrarás en la entrada [Gráfica de desempeño de jugadores](https://www.nies.futbol/2023/07/grafica-de-desempeno-de-jugadores.html).
+    """
     player = st.selectbox('Selecciona un jugador', players["Player"].to_list(),)
     st.image(f"static/{player}.jpg")
 
