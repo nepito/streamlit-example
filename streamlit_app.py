@@ -48,7 +48,7 @@ with tab2:
         strokeWidth=0
     ).configure_axis(
         domain=False,
-        labelFontSize=8
+        labelFontSize=10
     )
     st.altair_chart(chart)
 
